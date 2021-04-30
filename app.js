@@ -77,12 +77,26 @@ app.post("/compose", function (req,res){
 })
 
 
-
+// router which will go to individual post pages
 app.get ("/posts/:postName", function(req,res) {
+// req.params= access to all values with a colen in front of it
+const requestedTitle= (req.params.postName);
+// loop through all posts in post array
+posts.forEach(function(post){
 
-console.log(req.params.postName);
+  // saved  for each stored post
+  const storedTitle= post.title;
 
-})
+  // check if they match
+
+  if(storedTitle ===  requestedTitle) {
+
+    console.log("match found");
+  }
+
+});
+
+});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
