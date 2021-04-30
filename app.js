@@ -52,7 +52,13 @@ contactContent: contactContent
 
 });
 
+app.get("/compose", function(req,res){
 
+  res.render("compose", {
+  
+  });
+
+});
 
 
 
