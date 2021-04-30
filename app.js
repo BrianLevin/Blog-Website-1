@@ -23,7 +23,10 @@ app.get("/", function(req,res){
 
   res.render("home", {
     // key value pair to pass over to ejs
-startingContent: homeStartingContent});
+startingContent: homeStartingContent,
+// render posts arrays
+posts: posts
+});
 console.log(posts);
 
 });
