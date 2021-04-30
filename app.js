@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.get("/", function(req,res){
 
   res.render("home", {
-    // key value pait to pass over to ejs
+    // key value pair to pass over to ejs
 startingContent: homeStartingContent
 
   });
@@ -45,7 +45,7 @@ aboutContent: aboutContent
 app.get("/contact", function(req,res){
 
   res.render("contact", {
-    // key value pait to pass over to ejs
+    // key value pair to pass over to ejs
 contactContent: contactContent
 
   });
