@@ -7,7 +7,10 @@
 <% console.log(posts); %>
 
 <!-- loop through each seperate posts title which will be displayed-->
- <%for (var i=0; i < posts.length; i++){ %>
-    <% console.log(posts[i].title); %>
- <% }; %>
+
+<% posts.forEach(function(post){ %>
+    <% console.log(posts.title); %>
+ <% })  %>
+
+
 <%- include("partials/footer"); -%>
