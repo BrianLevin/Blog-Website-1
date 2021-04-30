@@ -9,7 +9,8 @@
 <!-- loop through each seperate posts title which will be displayed-->
 
 <% posts.forEach(function(post){ %>
-    <% console.log(posts.title); %>
+   <h1><%= post.title %></h1>
+   <p><%=post.content %></p>
  <% })  %>
 
 
