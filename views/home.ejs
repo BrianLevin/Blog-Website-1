@@ -6,9 +6,11 @@
 
 <% console.log(posts); %>
 
-<!-- loop through each seperate posts title which will be displayed-->
+<!-- loop through each seperate posts title and body which will be displayed-->
 
 <% posts.forEach(function(post){ %>
+
+    <!-- render content onto html page-->
    <h1><%= post.title %></h1>
    <p><%=post.content %></p>
  <% })  %>
