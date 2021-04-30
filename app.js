@@ -28,6 +28,29 @@ startingContent: homeStartingContent
 });
 
 
+// home route
+app.get("/about", function(req,res){
+
+  res.render("about", {
+    // key value pair to pass over to ejs
+aboutContent: aboutContent
+
+  });
+
+});
+
+
+
+// home route
+app.get("/contact", function(req,res){
+
+  res.render("contact", {
+    // key value pait to pass over to ejs
+contactContent: contactContent
+
+  });
+
+});
 
 
 
