@@ -19,7 +19,11 @@ app.use(express.static("public"));
 // home route
 app.get("/", function(req,res){
 
-  res.render("home");
+  res.render("home", {
+    // key value pait to pass over to ejs
+startingContent: homeStartingContent
+
+  });
 
 });
 
