@@ -92,11 +92,12 @@ posts.forEach(function(post){
   // check if they match
 
   if(storedTitle ===  requestedTitle) {
-
-    console.log("match found");
-  } else{
-    console.log("not a match");
-  }
+// render post page if the stored title === requested title
+    res.render("post",{
+      title: post.title,
+      content: post.content
+    });
+  } 
 
 });
 
