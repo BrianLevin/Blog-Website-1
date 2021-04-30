@@ -15,15 +15,16 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+//empty array which will hold posts
+let posts= [];
 
 // home route
 app.get("/", function(req,res){
 
   res.render("home", {
     // key value pair to pass over to ejs
-startingContent: homeStartingContent
-
-  });
+startingContent: homeStartingContent});
+console.log(posts);
 
 });
 
@@ -51,7 +52,7 @@ contactContent: contactContent
   });
 
 });
-
+// get compose page
 app.get("/compose", function(req,res){
 
   res.render("compose", {
@@ -59,10 +60,17 @@ app.get("/compose", function(req,res){
   });
 
 });
-
+// data which will be subbmitted and posted
 app.post("/compose", function (req,res){
-
-  console.log(req.body.postTitle);
+     // data which is  routed and posted from the form
+     const post = {
+      title: req.body.postTitle,
+      content: req.body.postBody
+    };
+  // push elements into the post array
+    posts.push(post);
+  // redirect to homepage after posts are p
+    res.redirect("/");
 })
 
 
