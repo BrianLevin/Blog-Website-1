@@ -38,19 +38,17 @@ const postSchema = {
 
 
 
-//empty array which will hold posts
-let posts= [];
 
 // home route
-app.get("/", function(req,res){
+ app.get("/", function(req, res){
 
-  res.render("home", {
-    // key value pair to pass over to ejs
-startingContent: homeStartingContent,
-// render posts arrays
-posts: posts
-});
-console.log(posts);
+  // find all posts in post collection and render it to home.ejs
+  Post.find({}, function(err, posts){
+    res.render("home", {
+      startingContent: homeStartingContent,
+      posts: posts
+      });
+  });
 
 });
 
