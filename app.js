@@ -109,7 +109,7 @@ app.get ("/posts/:postID", function(req,res) {
 // lodash to convert everything typed in search bar to view post  to lowercase
 // store postID parameter
 const requestedPostId = req.params.postId;
-const requestedTitle= _.lowerCase(req.params.postName);
+
 // find one method to find posts witch matching with matching id in posts collection
 Post.findOne({_id: requestedPostId}, function(err, post){
 // render content to ejs page
@@ -122,23 +122,7 @@ Post.findOne({_id: requestedPostId}, function(err, post){
   });
 
 });
-// loop through all posts in post array
-posts.forEach(function(post){
 
-  // saved  for each stored post
-  const storedTitle= _.lowerCase(post.title);
-
-  // check if they match
-
-  if(storedTitle ===  requestedTitle) {
-// render post page if the stored title === requested title
-    res.render("post",{
-      title: post.title,
-      content: post.content
-    });
-  } 
-
-});
 
 });
 
