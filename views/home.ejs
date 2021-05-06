@@ -4,7 +4,7 @@
 <!--    Render variable key from  / route in ejs-->
 <p> <%= startingContent %> </p>
 
-<% console.log(posts); %>
+
 
 <!-- loop through each seperate posts title and body which will be displayed-->
 
@@ -14,10 +14,10 @@
    <h1><%= post.title %></h1>
 
    <!-- Only a limited amount of trumpcated charatcers will show on the blog string-->
-   <p><%=post.content.substring(0,100)  + "..."%>
+   <><%=post.content.substring(0,100)  + "..."%>
 
     <!-- link which will be directed to each pages blog post-->
-<a href="/posts/<%= post_id %>"  >Read More</a></p>
+    <a href="/posts/<%=post.id%>">Read More</a>
  <% })  %>
 
 
