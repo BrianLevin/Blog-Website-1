@@ -104,10 +104,24 @@ res.redirect("/");
 
 
 // router which will go to individual post pages
-app.get ("/posts/:postName", function(req,res) {
+app.get ("/posts/:postID", function(req,res) {
 // req.params= access to all values with a colen in front of it
 // lodash to convert everything typed in search bar to view post  to lowercase
+// store postID parameter
+const requestedPostId = req.params.postId;
 const requestedTitle= _.lowerCase(req.params.postName);
+// find one method to find posts witch matching with matching id in posts collection
+Post.findOne({_id: requestedPostId}, function(err, post){
+// render content to ejs page
+  res.render("post", {
+
+    title: post.title,
+
+    content: post.content
+
+  });
+
+});
 // loop through all posts in post array
 posts.forEach(function(post){
 
