@@ -91,8 +91,13 @@ app.post("/compose", function (req,res){
       title: req.body.postTitle,
       content: req.body.postBody
     });
-  // save post
-    post.save();
+  // save post only redirect when there is no errors
+    post.save(function(err){
+      if (!err) {
+res.redirect("/");
+
+      }
+    });
   // redirect to homepage after posts are p
     res.redirect("/");
 })
