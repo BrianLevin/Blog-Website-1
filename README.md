@@ -4,7 +4,7 @@ https://myy-blog-website.herokuapp.com/
 
 
 ## Application description:
-An Express, Embedded Javascript (EJS), and Mongo application that allows the user to save and make blog posts. Each page  is displayed using EJS and each is stored in the Mongo Database.
+An Express, Embedded Javascript (EJS), and Mongoose application that allows the user to save and make blog posts. Each page  is displayed using EJS and each is stored in the Mongo Database.
  
 
  ## Click [here](https://myy-blog-website.herokuapp.com/) for the live app. 
@@ -40,7 +40,7 @@ The user can then go to the single blog post page by clicking read more:
 - EJS
 - Node
 - Express
-- Mongo
+- Mongoose
 
 
 ## Email:
